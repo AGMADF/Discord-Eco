@@ -9,7 +9,7 @@ if(!user)return message.reply(":x: | Plz mention someone.");
 if(user.id == message.author.id)return message.reply(":x: | You can't rep youself.");
 var userBalance = client.getMemberOrCreate(message, user);
 const time = client.ms(Eco.repTime - Date.now());
-if(Eco.repTime > Date.now()) message.channel.send(`**You can get your daily reward after ( \`${time.hours} hours, ${time.minutes} minutes, ${time.seconds} seconds\` )**`);
+if(Eco.repTime > Date.now()) message.channel.send(`**You can get your rep someone after ( \`${time.hours} hours, ${time.minutes} minutes, ${time.seconds} seconds\` )**`);
 else {
 message.reply(`**🆙 | You have been repsected <@${user.id}>**`);
 client.db.add(`Eco.${message.guild.id}.${user.id}.rep`, 1);
